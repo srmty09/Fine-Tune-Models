@@ -1,0 +1,24 @@
+clip_id: openai/clip-vit-base-patch32
+llm_id: HuggingFaceTB/SmolLM2-360M-Instruct
+dataset_id: Luna288/image-captioning-FACAD-base
+
+output_dir: ./HF-360M-fashion-caption-generator
+hf_repo_id: srmty/HF-360M-fashion-caption-generator
+hf_private: false
+push_to_hub: true
+
+clip_hidden: 768
+llm_hidden: 960
+
+epochs: 3
+batch_size: 2
+grad_accum: 16
+learning_rate: 0.0001
+weight_decay: 0.01
+warmup_ratio: 0.05
+max_grad_norm: 1.0
+max_text_len: 256
+max_new_tokens: 50
+
+system_prompt: "You are a fashion product captioning assistant. Write one short ecommerce fashion caption from the image. Write only one sentence."
+user_prompt: "Write a short fashion product caption for this image."
